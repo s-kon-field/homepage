@@ -126,10 +126,10 @@ li {
 
 .box-013 {
     max-width: 800px;
-    margin: 0 auto;
-	margin-top: 30px;
+    margin: 30px auto; /* 上下の余白を30pxに */
     border: 2px solid #ff0000;
     border-radius: 3px;
+    padding: 0; /* 左右の余白を追加 */
 }
 
 .box-013 span {
