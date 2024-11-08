@@ -362,16 +362,17 @@ li {
     right: 4px;
     bottom: 4px;
   }
-  /*
-  ホバー時は枠線を太くする
-  「border」ではなく「outline」を使用することで、ホバー時にレイアウトがずれるのを防ぎます。
-  ※詳細を知りたい方は、borderとoutlineの違いについて検索してみてください。
-  */
+
   #contact .link .item:hover {
     outline: solid 3px #121212;
   }
   #contact .link .item img {
     margin-bottom: 5px;
+  }
+
+  .twitter{
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 
   #footer {
