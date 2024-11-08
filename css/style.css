@@ -2,11 +2,15 @@
 
 html {
   font-size: 100%;
+  margin: 0;
+  padding: 0;
 }
 body {
   color: #121212;
   font-size: 0.9rem;
   line-height: 1.7;
+  margin: 0;
+  padding: 0;
 }
 a {
   color: #121212;
@@ -52,6 +56,8 @@ li {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
+  padding-top: 0; /* 上部の余白をなくす */
+  padding-bottom: 20px; /* 下部の余白は維持 */
   position: fixed;
   z-index: 10;
   background-color: #fff;
