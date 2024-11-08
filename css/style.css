@@ -1,232 +1,59 @@
-/* header */
+@charset "UTF-8";
 
-header {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-    background: #eee;
+html {
+  font-size: 100%;
+}
+body {
+  color: #121212;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+a {
+  color: #121212;
+  text-decoration: none;
+}
+
+li {
+    list-style: none;
   }
-  header .inner {
-    position: relative;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
+  
+  /* サイドメニューの横幅分だけ左にmarginをとる */
+  .container {
+    margin-left: 300px;
+  }
+  /* コンテンツ幅を設定するための共通クラス */
+  .wrapper {
+    max-width: 900px;
+    padding: 80px 20px;
+    margin: 0 auto;
+  }
+  .site-title {
+    width: 200px;
+    line-height: 1px;
+    margin-bottom: 30px;
+  }
+  .site-title a {
+    display: block;
+  }
+
+  #header {
+    width: 300px;
     height: 100%;
-  }
-  /* .logo */
-  
-  header .logo {
-    position: relative;
-    width: 100px;
-    margin: 0;
-    padding: 0;
-  }
-  header .logo a {
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  @media screen and (max-width: 767px) {
-    header .logo {
-      padding: 0;
-    }
-    header .logo a {
-    }
-  }
-  
-  /* scroll */
-  
-  header {
-    transition: height 0.4s cubic-bezier(0.34, 0.615, 0.4, 0.985);
-  }
-  header.scroll {
-    height: 60px;
+    background-color: #fff;
+    padding: 40px 50px 30px 45px;
     position: fixed;
-    z-index: 9999;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  header .logo {
-    transition: width 0.4s cubic-bezier(0.34, 0.615, 0.4, 0.985);
-  }
-  header.scroll .logo {
-    width: 70px;
-  }
-  
-  /* header-navi-box */
-  
-  header .navi {
-    margin: 0 0 0 auto;
-    padding: 0;
-    font-size: 14px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    list-style: none;
-  }
-  header .navi li {
-    margin: 5px 0 5px 40px;
-  }
-  header .navi li:first-child {
-    margin-left: 0;
-  }
-  header .navi li a {
-    display: block;
-    box-sizing: border-box;
-    text-decoration: none;
-  }
-  header .navi li a:hover {
-    text-decoration: underline;
-  }
-  .button{
-    background: #005eed;
-    color: #FFF;
-    padding: 10px 20px;
-    border-radius: 4px;
-  }
-  
-  @media screen and (max-width: 767px) {
-    header .navi {
-      display: none;
-    }
-  }
-  
-  /* open-button */
-  
-  .sp-navi-toggle {
-    display: none;
-    margin: auto 0;
-    font-size: 10px;
-    font-weight: bold;
-    line-height: 1;
-    position: absolute;
     top: 0;
-    bottom: 0;
-    right: 40px;
-    width: 16px;
-    height: 25px;
-    transition: all 0.4s;
-    color: #464646;
-    border: none;
-    outline: none;
-    background: none;
-    -webkit-appearance: unset;
+    /* 画面の高さが低くてメニューが隠れてしまった場合に、縦スクロールが出るよう設定 */
+    overflow-y: auto;
   }
-  .sp-navi-toggle .menu,
-  .sp-navi-toggle .close {
-    position: absolute;
-    bottom: 0;
-    left: -50%;
-    display: block;
-    width: 34px;
-    height: 11px;
+  #header .nav-menu {
+    margin-bottom: 60px;
   }
-  .sp-navi-toggle .close {
-    display: none;
-  }
-  .sp-navi-toggle .bar {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #464646;
-  }
-  .sp-navi-toggle .bar:nth-of-type(1) {
-    top: 0;
-  }
-  .sp-navi-toggle .bar:nth-of-type(2) {
-    top: 5px;
-  }
-  .sp-navi-toggle .bar:nth-of-type(3) {
-    top: 10px;
-  }
-  
-  /* close-button */
-  
-  html.sidebar-is-open .sp-navi-toggle .bar:nth-of-type(1) {
-    top: 5px;
-    transform: rotate(45deg);
-  }
-  html.sidebar-is-open .sp-navi-toggle .bar:nth-of-type(2) {
-    top: 5px;
-    transform: rotate(-45deg);
-  }
-  html.sidebar-is-open .sp-navi-toggle .bar:nth-of-type(3) {
-    display: none;
-  }
-  html.sidebar-is-open .sp-navi-toggle .menu {
-    display: none;
-  }
-  html.sidebar-is-open .sp-navi-toggle .close {
-    display: block;
-  }
-  
-  @media screen and (max-width: 767px) {
-    .sp-navi-toggle{
-      display: block;
-    }
-  }
-  
-  /* sp-navi */
-  
-  .sp-navi-box {
-    display: none;
-  }
-  .sp-navi {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    width: 100%;
-    height: 100vh;
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-  }
-  .sp-navi li {
-    padding: 20px 0;
-  }
-  .sp-navi li a {
-    display: block;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .sp-navi li a:hover {
-    text-decoration: underline;
-  }
-  
-  
-  
-  
-  @media screen and (max-width: 767px) {
-    html.sidebar-is-open .sp-navi-box {
-      display: block;
-    }
-    html.sidebar-is-open {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      overflow: hidden;
-      width: 100%;
-    }
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  a{
-    color: #333;
+  #header li {
+    font-size: 0.875rem;
+    padding: 8px 0;
   }
 
-.slide-items {
+  .slide-items {
     width: 50%;
     height: 50%;
     margin: auto;
@@ -245,3 +72,100 @@ header {
     font-size: 18px;
     top: 6px;
   }
+
+  @media screen and (max-width: 960px) {
+  /*-------------------------------------------
+    ヘッダー
+    -------------------------------------------*/
+    #header {
+      width: 100%;
+      height: 72px;
+      padding: 0;
+      z-index: 10;
+    }
+    /*
+    ハンバーガーメニュー
+    ※ハンバーガーメニューの説明は他の課題と重複するため割愛
+    */
+    #navi {
+      width: 300px;
+      background: #fff;
+      padding: 25px;
+      position: fixed;
+      top: 0;
+      left: -300px;
+      bottom: 0;
+      opacity: 0;
+      overflow-y: auto;
+      transition: 0.5s;
+      z-index: 20;
+    }
+    .open #navi {
+      left: 0;
+      opacity: 1;
+    }
+    #navi ul.nav-menu {
+      margin-bottom: 30px;
+    }
+    #navi ul li {
+      padding: 10px 0;
+    }
+    .hamburger {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      position: fixed;
+      top: 22px;
+      right: 18px;
+      transition: 0.5s;
+      z-index: 20;
+    }
+    .hamburger span {
+      width: 30px;
+      height: 2px;
+      background-color: #121212;
+      border-radius: 4px;
+      display: block;
+      position: absolute;
+      left: 0;
+      transition: 0.5s;
+    }
+    .hamburger span:nth-child(1) {
+      top: 4px;
+    }
+    .hamburger span:nth-child(2) {
+      top: 14px;
+    }
+    .hamburger span:nth-child(3) {
+      bottom: 4px;
+    }
+    .open .hamburger span {
+      background-color: #fff;
+    }
+    .open .hamburger span:nth-child(1) {
+      transform: translateY(10px) rotate(-315deg);
+    }
+    .open .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+    .open .hamburger span:nth-child(3) {
+      transform: translateY(-10px) rotate(315deg);
+    }
+    #mask {
+      display: none;
+      transition: 0.5s;
+    }
+    .open #mask {
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      cursor: pointer;
+      display: block;
+      opacity: 0.8;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+  
+}
