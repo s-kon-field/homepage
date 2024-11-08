@@ -383,7 +383,7 @@ li {
         white-space: normal; /* 空白で折り返し */
         }
     }
-    
+
     #contact {
         padding-bottom: 60px;
       }
@@ -405,4 +405,3 @@ li {
   #footer .menu li {
     margin-bottom: 10px;
   }
-}
