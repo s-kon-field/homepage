@@ -369,8 +369,6 @@ li {
   
     .main {
       margin-left: 0px;
-      position: fixed;
-      z-index: 0;
     }
     .news_container {
         width: 100%;
