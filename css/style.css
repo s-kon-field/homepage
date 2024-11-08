@@ -369,6 +369,7 @@ li {
   
     .main {
       margin-left: 0px;
+      position: fixed;
       z-index: 3;
     }
     .news_container {
