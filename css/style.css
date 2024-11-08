@@ -317,7 +317,7 @@ li {
       top: 22px;
       right: 18px;
       transition: 0.5s;
-      z-index: 10;
+      z-index: 30;
     }
     .hamburger span {
       width: 30px;
@@ -364,7 +364,7 @@ li {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 15;
+      z-index: 25;
     }
   
     .main {
