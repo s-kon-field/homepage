@@ -73,6 +73,46 @@ li {
     top: 6px;
   }
 
+  #contact {
+    background-color: #fff;
+    padding-bottom: 80px;
+  }
+  #contact .link {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+  #contact .link .item {
+    width: 30%;
+    border: solid 1px #121212;
+    display: block;
+    font-size: 0.875rem;
+    position: relative;
+    padding: 50px 0;
+    text-align: center;
+    transition: 0.1s;
+  }
+  #contact .link .item::before {
+    content: "";
+    border-top: 20px solid transparent;
+    border-right: 20px solid #121212;
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+  }
+  /*
+  ホバー時は枠線を太くする
+  「border」ではなく「outline」を使用することで、ホバー時にレイアウトがずれるのを防ぎます。
+  ※詳細を知りたい方は、borderとoutlineの違いについて検索してみてください。
+  */
+  #contact .link .item:hover {
+    outline: solid 3px #121212;
+  }
+  #contact .link .item img {
+    margin-bottom: 5px;
+  }
+
+
   @media screen and (max-width: 960px) {
   /*-------------------------------------------
     ヘッダー
@@ -168,4 +208,20 @@ li {
       z-index: 10;
     }
   
+    #contact {
+        padding-bottom: 60px;
+      }
+      #contact .link {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+      }
+      #contact .link .item {
+        width: 60%;
+        margin: 20px 0 0 0;
+      }
+      #contact .link .item:first-child {
+        margin-top: 0;
+      }
+    
 }
