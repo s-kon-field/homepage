@@ -5,54 +5,165 @@ html {
 }
 body {
   color: #121212;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 a {
   color: #121212;
   text-decoration: none;
 }
-
+img {
+  max-width: 100%;
+}
 li {
-    list-style: none;
-  }
-  
-  /* サイドメニューの横幅分だけ左にmarginをとる */
-  .main {
-    margin-left: 300px;
-  }
-  /* コンテンツ幅を設定するための共通クラス */
-  .wrapper {
-    max-width: 900px;
-    padding: 80px 20px;
-    margin: 0 auto;
-  }
-  .site-title {
-    width: 200px;
-    line-height: 1px;
-    margin-bottom: 30px;
-  }
-  .site-title a {
-    display: block;
-  }
+  list-style: none;
+}
+.site-title {
+  line-height: 1px;
+}
+.site-title a {
+  display: block;
+}
+.sec-title {
+  font-size: 2.25rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+/*
+フェード表示させる要素に使用するためのクラス
+*/
+.fadein {
+  opacity : 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
 
-  #header {
-    width: 300px;
-    height: 100%;
-    background-color: #fff;
-    padding: 40px 50px 30px 45px;
-    position: fixed;
-    top: 0;
-    /* 画面の高さが低くてメニューが隠れてしまった場合に、縦スクロールが出るよう設定 */
-    overflow-y: auto;
-  }
-  #header .nav-menu {
-    margin-bottom: 60px;
-  }
-  #header li {
-    font-size: 0.875rem;
-    padding: 8px 0;
-  }
+/*-------------------------------------------
+ヘッダー
+-------------------------------------------*/
+/*
+「position: fixed;」でヘッダーを固定し、「z-index: 10;」で前面に表示
+※他のコンテンツでpositionをrelative、absolute、fixedのいずれかに
+設定している場合は、z-indexの数値が大きい方が前面に表示される
+*/
+#header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: fixed;
+  z-index: 10;
+  background-color: #fff;
+}
+/*
+ハンバーガーメニュー
+解説は、「中級編：ストアサイト（インテリア）」のCSS参照
+*/
+#navi {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  width: 300px;
+  color: #fff;
+  padding: 60px 25px;
+  background-color: #006036;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: all .5s;
+  z-index: 20;
+  opacity: 0;
+}
+#navi a {
+  color: #fff;
+}
+.open #navi {
+  left: 0;
+  opacity: 1;
+}
+#navi ul {
+  margin: 0;
+  padding: 0;
+}
+#navi ul.nav-menu {
+  margin-bottom: 60px;
+  border-top: solid 1px #fff;
+}
+#navi ul.nav-menu li {
+  position: relative;
+  margin: 0;
+  padding: 20px 0;
+  border-bottom: solid 1px #fff;
+}
+#navi ul.nav-sns li {
+  padding: 5px 0;
+}
+.toggle_btn {
+  display: block;
+  position: fixed;
+  top: 25px;
+  right: 45px;
+  width: 30px;
+  height: 30px;
+  transition: all .5s;
+  cursor: pointer;
+  z-index: 20;
+}
+.toggle_btn span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  transition: all .5s;
+}
+.toggle_btn span:nth-child(1) {
+  top: 4px;
+}
+.toggle_btn span:nth-child(2) {
+  top: 14px;
+}
+.toggle_btn span:nth-child(3) {
+  bottom: 4px;
+}
+.open .toggle_btn span {
+  background-color: #fff;
+}
+.open .toggle_btn span:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+  transform: translateY(10px) rotate(-315deg);
+}
+.open .toggle_btn span:nth-child(2) {
+  opacity: 0;
+}
+.open .toggle_btn span:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(315deg);
+  transform: translateY(-10px) rotate(315deg);
+}
+#mask {
+  display: none;
+  transition: all .5s;
+}
+.open #mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .8;
+  z-index: 10;
+  cursor: pointer;
+}
 
+.main {
+  padding-top: 80px;
+}
   .container{
 	background-image: url("../image/library_image.jpg"); /* 画像のパスを指定 */
     background-size: cover; /* 画像をコンテナ全体にカバー */
@@ -278,102 +389,16 @@ li {
   }
 
   @media screen and (max-width: 768px) {
-  /*-------------------------------------------
-    ヘッダー
-    -------------------------------------------*/
-    #header {
-      width: 100%;
-      height: 72px;
-      padding: 0;
-      z-index: 5;
-    }
-    /*
-    ハンバーガーメニュー
-    ※ハンバーガーメニューの説明は他の課題と重複するため割愛
-    */
-    #navi {
-      width: 300px;
-      background: #fff;
-      padding: 25px;
-      position: fixed;
-      top: 0;
-      left: -300px;
-      bottom: 0;
-      opacity: 0;
-      overflow-y: auto;
-      transition: 0.5s;
-      z-index: 30;
-    }
-    .open #navi {
-      left: 0;
-      opacity: 1;
-    }
-    #navi ul.nav-menu {
-      margin-bottom: 30px;
-    }
-    #navi ul li {
-      padding: 10px 0;
-    }
-    .hamburger {
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      position: fixed;
-      top: 22px;
-      right: 18px;
-      transition: 0.5s;
-      z-index: 20;
-    }
-    .hamburger span {
-      width: 30px;
-      height: 2px;
-      background-color: #121212;
-      border-radius: 4px;
-      display: block;
-      position: absolute;
-      left: 0;
-      transition: 0.5s;
-    }
-    .hamburger span:nth-child(1) {
-      top: 4px;
-    }
-    .hamburger span:nth-child(2) {
-      top: 14px;
-    }
-    .hamburger span:nth-child(3) {
-      bottom: 4px;
-    }
-    .open .hamburger span {
-      background-color: #fff;
-    }
-    .open .hamburger span:nth-child(1) {
-      transform: translateY(10px) rotate(-315deg);
-    }
-    .open .hamburger span:nth-child(2) {
-      opacity: 0;
-    }
-    .open .hamburger span:nth-child(3) {
-      transform: translateY(-10px) rotate(315deg);
-    }
-    #mask {
-      display: none;
-      transition: 0.5s;
-    }
-    .open #mask {
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      cursor: pointer;
-      display: block;
-      opacity: 0.8;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 10;
-    }
   
+    #header {
+      padding: 20px 16px;
+    }
+    .toggle_btn {
+      right: 20px;
+    }
+
     .main {
-      margin-left: 0px;
+      padding-top: 80px;
     }
     .news_container {
         width: 100%;
