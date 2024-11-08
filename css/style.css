@@ -188,6 +188,8 @@ li {
 	color: #333;
 	display: inline-block; /* 通常時はインラインブロックにしておく */
     word-break: break-word; /* 単語の途中で改行を挿入 */
+    word-wrap: break-word; /* 長いテキストの折り返し */
+    white-space: normal; /* 空白で折り返し */
 	}
 
   .slide-items {
@@ -375,7 +377,7 @@ li {
     }
     .news_container {
         width: 100%;
-        padding: 0 20px;
+        padding: 0;
         }
         .news_text a {
         display: block;
