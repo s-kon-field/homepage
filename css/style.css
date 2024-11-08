@@ -1,0 +1,19 @@
+.slide-items {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+  }
+  
+.slick-slide img {
+    height: 30vw; 
+    max-height: 400px; 
+    min-height: 350px; 
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
+  }
+  .slick-dots li button:before {
+    font-size: 18px;
+    top: 6px;
+  }
