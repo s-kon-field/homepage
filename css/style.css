@@ -319,10 +319,10 @@ li {
 .slick-slide img {
   width: 30vw;          /* 幅を30vwに設定 */
   height: 30vw;         /* 高さも30vwに設定 */
-  max-width: 200px;     /* 最大幅を400pxに制限 */
-  max-height: 200px;    /* 最大高さを400pxに制限 */
-  min-width: 150px;     /* 最小幅を350pxに設定 */
-  min-height: 150px;    /* 最小高さを350pxに設定 */
+  max-width: 300px;     /* 最大幅を400pxに制限 */
+  max-height: 300px;    /* 最大高さを400pxに制限 */
+  min-width: 160px;     /* 最小幅を350pxに設定 */
+  min-height: 160px;    /* 最小高さを350pxに設定 */
   object-fit: cover;    /* 画像が切り取られることを許容して、枠にフィットさせる */
   }
   
