@@ -17,7 +17,7 @@ li {
   }
   
   /* サイドメニューの横幅分だけ左にmarginをとる */
-  .container {
+  .main {
     margin-left: 300px;
   }
   /* コンテンツ幅を設定するための共通クラス */
@@ -367,6 +367,9 @@ li {
       z-index: 10;
     }
   
+    .main {
+      margin-left: 0px;
+    }
     .news_container {
         width: 100%;
         padding: 0;
