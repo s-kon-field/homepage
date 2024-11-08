@@ -24,6 +24,8 @@ $(function(){
 
 $(".slide-items").slick({
     autoplay: true, // 自動再生
+    centerMode: true,
+  variableWidth: true,
     arrows: true, // 矢印
     dots: true, // インジケーター
     responsive: [
