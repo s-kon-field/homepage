@@ -286,14 +286,15 @@ li {
 .mv_calendar_item dt{
 	position:relative;
 	display:inline-block;
-	width:45px;
+	width:100px;
 	font-size:1.3rem;
-	letter-spacing:.65px;
+	letter-spacing:.140px;
 	line-height:1.9rem;
 	text-align:center;
 	padding-bottom:1px;
 	border:1px solid #ddd;
 	top:1px;
+  white-space: nowrap;
 }
 .mv_calendar_item dd{
 	display:block;
