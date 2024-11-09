@@ -305,7 +305,7 @@ span[class$="-closed"]{color:#EF2D1B;}
   margin-bottom: 10px;
 	transition:color .3s,background-color .3s,border-color .3s;
 }
-.calendar_link:hover{color:#fff;background-color:#098663;border-color:#098663;}
+.calendar_link:hover{color:#fff;background-color:#006036;border-color:#006036;}
 .calendar_link span{
 	position:relative;
 	display:inline-block;
@@ -329,22 +329,25 @@ span[class$="-closed"]{color:#EF2D1B;}
 .calendar_link:hover span::before{opacity:0;}
 .calendar_link:hover span::after{opacity:1;}
 
+.important_container{
+  margin: 0 20px;
+}
 .box-013 {
-    max-width: 800px;
-    margin: 30px auto; /* 上下の余白を30pxに */
-    border: 2px solid #ff0000;
-    border-radius: 3px;
-    padding: 0; /* 左右の余白を追加 */
+  max-width: 800px; /* 最大幅を800pxに設定 */
+  margin: 30px auto; /* 上下の余白を30px、左右をautoで中央に配置 */
+  border: 2px solid #ff0000;
+  border-radius: 3px;
+  padding: 0;/* 左右の余白を20pxに設定 */
 }
 
 .box-013 span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: .5em 0;
-    background-color: #ff0000;
-    color: #fff;
-    font-weight: 600;
+  display: flex; /* フレックスボックスに変更 */
+  justify-content: center; /* 水平方向に中央揃え */
+  align-items: center; /* 垂直方向に中央揃え */
+  padding: .5em 0; /* 上下の余白を追加 */
+  background-color: #ff0000;
+  color: #fff;
+  font-weight: 600;
 }
 
 .box-013 p {
