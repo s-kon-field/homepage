@@ -295,6 +295,8 @@ li {
 	border:1px solid #ddd;
 	top:1px;
   white-space: nowrap;
+  background-color: #23651c; 
+    color: white;
 }
 .mv_calendar_item dd{
 	display:block;
