@@ -49,14 +49,7 @@ li {
   transition: all 1s;
 }
 
-/*-------------------------------------------
-ヘッダー
--------------------------------------------*/
-/*
-「position: fixed;」でヘッダーを固定し、「z-index: 10;」で前面に表示
-※他のコンテンツでpositionをrelative、absolute、fixedのいずれかに
-設定している場合は、z-indexの数値が大きい方が前面に表示される
-*/
+
 #header {
   width: 100%;
   display: flex;
@@ -178,7 +171,7 @@ li {
   padding-top: 40px;
 }
   .container{
-	background-image: url("../image/library_image1.jpg"); /* 画像のパスを指定 */
+	background-image: url("../image/library_image3.png"); /* 画像のパスを指定 */
     background-size: cover; /* 画像をコンテナ全体にカバー */
     background-position: center; /* 画像の位置を中央に設定 */
     width: 100%; /* 幅を100%に設定 */
