@@ -485,6 +485,9 @@ span[class$="-closed"]{color:#EF2D1B;}
     margin-bottom: 5px;
   }
 
+  .footer-title{
+    margin-left: 30px;
+  }
   .twitter{
     margin-top: 50px;
     margin-bottom: 50px;
