@@ -292,11 +292,9 @@ li {
 	line-height:1.9rem;
 	text-align:center;
 	padding-bottom:1px;
-	border:1px solid #ddd;
+	border:4px solid #23651c;
 	top:1px;
   white-space: nowrap;
-  background-color: #23651c; 
-    color: white;
 }
 .mv_calendar_item dd{
 	display:block;
